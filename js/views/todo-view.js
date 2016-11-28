@@ -52,6 +52,7 @@ var app = app || {};
 
 			this.$el.html(this.template(this.model.toJSON()));
 			this.$el.toggleClass('completed', this.model.get('completed'));
+			this.$el.toggleClass('priority', this.model.get('priority'));
 			this.toggleVisible();
 			this.$input = this.$('.edit');
 			return this;
@@ -132,10 +133,8 @@ var app = app || {};
 		},
 
 		togglePriority: function () {
-			console.log(this);
-			console.dir(this);
-			// this.selector.css({"color": "green"});
-			this.$el.toggleClass('priority');
+			// this.$el.toggleClass('priority');
+			this.model.togglePriorityModel();
 		},
 	});
 })(jQuery);
